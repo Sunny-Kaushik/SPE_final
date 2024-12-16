@@ -92,14 +92,15 @@ kubectl get pods -o wide
 ## Docker Commands
 
 ### Build and Run Containers
-1. Build the Doctor Recommendation container:
+1. Build and run the Doctor Recommendation container:
    ```bash
    docker build -t bandit .
    docker run --name bandit_v1 -p 8000:8000 bandit
    ```
 
-2. Run the Specialty Predictor container:
+2. Build and Run the Specialty Predictor container:
    ```bash
+   docker build -t speaciality_predictor .
    docker run --name second_v1 -p 8080:5000 sunnykaushik007/flask-specialty-predictor
    ```
 
@@ -131,27 +132,8 @@ docker image inspect <image-name>
 
 ---
 
-## File Structure
-
-```plaintext
-project-root/
-|-- app.py                 # Main FastAPI application file
-|-- Dockerfile             # Dockerfile for building images
-|-- static/                # Static assets (CSS, JS, images)
-|-- templates/             # HTML templates for rendering web pages
-|-- group_vars/all/        # Vault file for sensitive data
-|-- roles/                 # Ansible roles for deployment
-|-- main1/ml-service.yaml  # Kubernetes YAML for Service 1
-|-- main2/ml-service2.yaml # Kubernetes YAML for Service 2
-```
-
----
-
 ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
 ---
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
